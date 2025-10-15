@@ -24,7 +24,7 @@ return (
         <div className="category">
         <h3>🎧 Accesorios</h3>
         <p>Desde teclados mecánicos hasta mousepads profesionales, tenemos todo lo necesario para completar tu setup gaming perfecto.</p>
-        <Link to="/accesorios" className="btn-category">Ver más</Link>
+        <Link to="/Accesorios" className="btn-category">Ver más</Link>
         </div>
     </div>
     </section>
