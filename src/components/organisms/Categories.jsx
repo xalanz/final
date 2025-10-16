@@ -12,7 +12,7 @@ return (
         <div className="category">
         <h3>🎮 Electrónica</h3>
         <p>Encuentra los mejores productos electrónicos para tu experiencia gaming y oficina.</p>
-        <Link to="/Electrónica" className="btn-category" >Ver má</Link>
+        <Link to="/Electronica" className="btn-category" >Ver má</Link>
         </div>
 
         <div className="category">
