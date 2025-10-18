@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 
 export default function Inicio() {
@@ -13,7 +14,7 @@ export default function Inicio() {
         <nav className="navbar">
           <ul>
             <li>
-              <a href="#inicio">Inicio de Sesión</a>
+              <Link to="/inicio">Inicio de Sesión</Link>
             </li>
           </ul>
         </nav>

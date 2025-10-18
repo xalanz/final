@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useCart } from '../../../context/CartContext.jsx';
-import CartModal from '../../CartModal.jsx';
+import CartModal from '../../../context/CartModal.jsx';
 
 export default function CartIcon() {
   const [isModalOpen, setIsModalOpen] = useState(false);
