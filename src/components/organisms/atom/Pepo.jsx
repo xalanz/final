@@ -1,12 +1,12 @@
 import React from "react";
 
-export default function Header() {
+export default function Pepo() {
 return (
     <header className="header">
     <div className="menu container">
         <div className="logo">Level-Up</div>
         <nav className="navbar">
-    <ul>
+        <ul>
             <li><a href="#inicio">Iniciar Sesión</a></li>
             <li><a href="#productos">Ver Categoría</a></li>
         </ul>
