@@ -145,140 +145,140 @@ const handleSubmit = (e) => {
 
 return (
     <div className="registro-container">
-    <div className="logo-container">
-        <img src="https://via.placeholder.com/150/4cca36/ffffff?text=LEVEL+UP" alt="Logo" className="logo-img" />
-    </div>
+        <div className="registro-logo-container">
+            <img src="https://via.placeholder.com/150/4cca36/ffffff?text=LEVEL+UP" alt="Logo" className="registro-logo-img" />
+        </div>
 
-    <form id="registroForm" onSubmit={handleSubmit} className="registro-form">
-        <h2 className="form-title">REGISTRO DE USUARIO</h2>
+        <form id="registroForm" onSubmit={handleSubmit} className="registro-form">
+            <h2 className="registro-form-title">REGISTRO DE USUARIO</h2>
 
-        <div className="input-container">
-        <i className="fa-solid fa-user" />
-        <input
-            type="text"
-            id="username"
-            name="username"
-            required
-            className="input"
-            placeholder="Nombre"
-            value={form.username}
-            onChange={handleChange}
-        />
-        {messages['username'] && (
-            <div className={messages['username'].type === 'error' ? 'error-message' : 'success-message'}>
-            {messages['username'].text}
+            <div className="registro-input-container">
+                <i className="fa-solid fa-user" />
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    required
+                    className="registro-input"
+                    placeholder="Nombre"
+                    value={form.username}
+                    onChange={handleChange}
+                />
+                {messages['username'] && (
+                    <div className={messages['username'].type === 'error' ? 'registro-error-message' : 'registro-success-message'}>
+                        {messages['username'].text}
+                    </div>
+                )}
+            </div>
+
+            <div className="registro-input-container">
+                <i className="fa-solid fa-user" />
+                <input
+                    type="text"
+                    id="apellido"
+                    name="apellido"
+                    required
+                    className="registro-input"
+                    placeholder="Apellido"
+                    value={form.apellido}
+                    onChange={handleChange}
+                />
+                {messages['apellido'] && (
+                    <div className={messages['apellido'].type === 'error' ? 'registro-error-message' : 'registro-success-message'}>
+                        {messages['apellido'].text}
+                    </div>
+                )}
+            </div>
+
+            <div className="registro-input-container">
+                <i className="fa-solid fa-envelope" />
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    className="registro-input"
+                    placeholder="Correo (ejemplo@gmail.com)"
+                    value={form.email}
+                    onChange={handleChange}
+                />
+                {messages['email'] && (
+                    <div className={messages['email'].type === 'error' ? 'registro-error-message' : 'registro-success-message'}>
+                        {messages['email'].text}
+                    </div>
+                )}
+            </div>
+
+            <div className="registro-input-container">
+                <i className="fa-solid fa-calendar" />
+                <input
+                    type="date"
+                    id="fechaNacimiento"
+                    name="fechaNacimiento"
+                    required
+                    className="registro-input"
+                    value={form.fechaNacimiento}
+                    onChange={handleChange}
+                />
+                {messages['fecha'] && (
+                    <div className={messages['fecha'].type === 'error' ? 'registro-error-message' : 'registro-success-message'}>
+                        {messages['fecha'].text}
+                    </div>
+                )}
+            </div>
+
+            <div className="registro-input-container">
+                <i className="fa-solid fa-lock" />
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    required
+                    className="registro-input"
+                    placeholder="Contraseña"
+                    value={form.password}
+                    onChange={handleChange}
+                />
+                {messages['password'] && (
+                    <div className={messages['password'].type === 'error' ? 'registro-error-message' : 'registro-success-message'}>
+                        {messages['password'].text}
+                    </div>
+                )}
+            </div>
+
+            <div className="registro-input-container">
+                <i className="fa-solid fa-lock" />
+                <input
+                    type="password"
+                    id="confirm-password"
+                    name="confirmPassword"
+                    required
+                    className="registro-input"
+                    placeholder="Confirmar Contraseña"
+                    value={form.confirmPassword}
+                    onChange={handleChange}
+                />
+                {messages['confirm-password'] && (
+                    <div className={messages['confirm-password'].type === 'error' ? 'registro-error-message' : 'registro-success-message'}>
+                        {messages['confirm-password'].text}
+                    </div>
+                )}
+            </div>
+
+            <button type="submit" className="registro-submit-btn">Registrarse</button>
+        </form>
+
+        {/* Age modal */}
+        {ageModalOpen && (
+            <div className="registro-modal" id="ageModal" style={{ display: 'block' }}>
+                <div className="registro-modal-content">
+                    <h3>Verificación de Edad</h3>
+                    <p>Detectamos que eres menor de edad. ¿Tienes permiso de tus padres para registrarte?</p>
+                    <button className="registro-btn-yes" onClick={permitirRegistro}>Sí, tengo permiso</button>
+                    <button className="registro-btn-no" onClick={denegarRegistro}>No, cancelar</button>
+                </div>
             </div>
         )}
-        </div>
-
-        <div className="input-container">
-        <i className="fa-solid fa-user" />
-        <input
-            type="text"
-            id="apellido"
-            name="apellido"
-            required
-            className="input"
-            placeholder="Apellido"
-            value={form.apellido}
-            onChange={handleChange}
-        />
-        {messages['apellido'] && (
-            <div className={messages['apellido'].type === 'error' ? 'error-message' : 'success-message'}>
-            {messages['apellido'].text}
-            </div>
-        )}
-        </div>
-
-        <div className="input-container">
-        <i className="fa-solid fa-envelope" />
-        <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            className="input"
-            placeholder="Correo (ejemplo@gmail.com)"
-            value={form.email}
-            onChange={handleChange}
-        />
-        {messages['email'] && (
-            <div className={messages['email'].type === 'error' ? 'error-message' : 'success-message'}>
-            {messages['email'].text}
-            </div>
-        )}
-        </div>
-
-        <div className="input-container">
-        <i className="fa-solid fa-calendar" />
-        <input
-            type="date"
-            id="fechaNacimiento"
-            name="fechaNacimiento"
-            required
-            className="input"
-            value={form.fechaNacimiento}
-            onChange={handleChange}
-        />
-        {messages['fecha'] && (
-            <div className={messages['fecha'].type === 'error' ? 'error-message' : 'success-message'}>
-            {messages['fecha'].text}
-            </div>
-        )}
-        </div>
-
-        <div className="input-container">
-        <i className="fa-solid fa-lock" />
-        <input
-            type="password"
-            id="password"
-            name="password"
-            required
-            className="input"
-            placeholder="Contraseña"
-            value={form.password}
-            onChange={handleChange}
-        />
-        {messages['password'] && (
-            <div className={messages['password'].type === 'error' ? 'error-message' : 'success-message'}>
-            {messages['password'].text}
-            </div>
-        )}
-        </div>
-
-        <div className="input-container">
-        <i className="fa-solid fa-lock" />
-        <input
-            type="password"
-            id="confirm-password"
-            name="confirmPassword"
-            required
-            className="input"
-            placeholder="Confirmar Contraseña"
-            value={form.confirmPassword}
-            onChange={handleChange}
-        />
-        {messages['confirm-password'] && (
-            <div className={messages['confirm-password'].type === 'error' ? 'error-message' : 'success-message'}>
-            {messages['confirm-password'].text}
-            </div>
-        )}
-        </div>
-
-        <button type="submit" className="submit-btn">Registrarse</button>
-    </form>
-
-      {/* Age modal */}
-    {ageModalOpen && (
-        <div className="modal" id="ageModal" style={{ display: 'block' }}>
-        <div className="modal-content">
-            <h3>Verificación de Edad</h3>
-            <p>Detectamos que eres menor de edad. ¿Tienes permiso de tus padres para registrarte?</p>
-            <button className="btn-yes" onClick={permitirRegistro}>Sí, tengo permiso</button>
-            <button className="btn-no" onClick={denegarRegistro}>No, cancelar</button>
-        </div>
-        </div>
-    )}
     </div>
 );
 }

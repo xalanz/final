@@ -1,144 +1,195 @@
-/* Converted from the provided inline styles */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-  list-style: none;
-}
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+        }
 
-body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  background: linear-gradient(to bottom, #000000, #257212);
-  font-family: 'Roboto', sans-serif;
-  color: rgba(10, 10, 10, 0.836);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #000000, #257212);
+            font-family: 'Roboto', sans-serif;
+            color: rgba(10, 10, 10, 0.836);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
 
-.registro-container {
-  position: relative;
-  width: 100%;
-  max-width: 450px;
-}
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+        }
 
-.logo-container {
-  display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: -60px;
-    z-index: 10;
-    position: relative;
-}
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: -60px;
+            z-index: 10;
+            position: relative;
+        }
 
-.logo-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 0 20px rgba(76, 202, 54, 0.7);
-}
+        .logo-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(76, 202, 54, 0.7);
+        }
 
-.registro-form {
-    background-color: rgb(255, 253, 253);
-    padding: 80px 40px 40px 40px;
-    border-radius: 15px;
-    width: 100%;
-    box-shadow: 
-    0 0 8px #4cca36,
-    0 0 15px #4cca36,
-    0 0 30px #4cca36,
-    0 0 40px #4cca36;
-}
+        form {
+            background-color: rgb(255, 253, 253);
+            padding: 80px 40px 40px 40px;
+            border-radius: 15px;
+            width: 100%;
+            box-shadow: 
+                0 0 8px #4cca36,
+                0 0 15px #4cca36,
+                0 0 30px #4cca36,
+                0 0 40px #4cca36;
+        }
 
-.form-title {
-    margin: 0 0 30px 0;
-    text-align: center;
-    font-family: "Permanent Marker", cursive;
-    font-size: 28px;
-    color: #000000;
-    letter-spacing: 1px;
-    font-weight: bold;
-}
+        .form-title {
+            margin: 0 0 30px 0;
+            text-align: center;
+            font-family: "Permanent Marker", cursive;
+            font-size: 28px;
+            color: #000000;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
 
-.input-container {
-    position: relative;
-    margin-top: 20px;
-}
+        .input-container {
+            position: relative;
+            margin-top: 20px;
+        }
 
-.input {
-  width: 100%;
-  padding: 12px 10px 12px 40px;
-  font-size: 16px;
-  background-color: #377528ef;
-  border: none;
-  border-radius: 6px;
-  color: white;
-  outline: none;
-  box-sizing: border-box;
-  transition: background-color 0.3s ease;
-}
+        .input {
+            width: 100%;
+            padding: 12px 10px 12px 40px;
+            font-size: 16px;
+            background-color: #377528ef;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            outline: none;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease;
+        }
 
-.input::placeholder { color: #d7e1cd; }
-.input:focus { background-color: #2a591f; }
+        .input::placeholder {
+            color: #d7e1cd;
+        }
 
-.input-container i {
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #ffffffef;
-  font-size: 18px;
-  pointer-events: none;
-}
+        .input:focus {
+            background-color: #2a591f;
+        }
 
-.error-message { color: #ff4444; font-size: 12px; margin-top: 5px; display: block; }
-.success-message { color: #4cca36; font-size: 12px; margin-top: 5px; display: block; }
+        .input-container i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ffffffef;
+            font-size: 18px;
+            pointer-events: none;
+        }
 
-.submit-btn {
-  margin-top: 25px;
-  padding: 12px;
-  font-size: 18px;
-  background-color: #2a591f;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  width: 70%;
-  transition: background-color 0.3s ease;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
+        .error-message {
+            color: #ff4444;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
 
-.submit-btn:hover { background-color: #85b376; }
+        .success-message {
+            color: #4cca36;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
 
-.modal { display: block; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.7); }
+        .submit-btn {
+            margin-top: 25px;
+            padding: 12px;
+            font-size: 18px;
+            background-color: #2a591f;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 70%;
+            transition: background-color 0.3s ease;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 30px;
-  border: none;
-  border-radius: 15px;
-  width: 90%;
-  max-width: 400px;
-  text-align: center;
-  box-shadow: 0 0 20px rgba(76, 202, 54, 0.5);
-}
+        .submit-btn:hover {
+            background-color: #85b376;
+        }
 
-.modal h3 { color: #257212; margin-bottom: 15px; font-size: 24px; }
-.modal p { margin-bottom: 20px; color: #333; line-height: 1.6; }
-.modal button { margin: 10px; padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; transition: transform 0.2s ease; }
-.modal button:hover { transform: scale(1.05); }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
 
-.btn-yes { background-color: #4cca36; color: white; }
-.btn-no { background-color: #ff4444; color: white; }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 30px;
+            border: none;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(76, 202, 54, 0.5);
+        }
 
-@media (max-width: 480px) {
-  .registro-form { padding: 60px 20px; }
-}
+        .modal h3 {
+            color: #257212;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .modal p {
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .modal button {
+            margin: 10px;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: transform 0.2s ease;
+        }
+
+        .modal button:hover {
+            transform: scale(1.05);
+        }
+
+        .btn-yes {
+            background-color: #4cca36;
+            color: white;
+        }
+
+        .btn-no {
+            background-color: #ff4444;
+            color: white;
+        }
