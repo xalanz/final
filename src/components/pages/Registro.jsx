@@ -10,10 +10,13 @@ export default function Registro() {
     password: '',
     confirmPassword: '',
   });
+  
+  const [usuarios, setUsuarios] = useState([]);
 
   const [messages, setMessages] = useState({});
   const [registroPermitido, setRegistroPermitido] = useState(false);
   const [ageModalOpen, setAgeModalOpen] = useState(false);
+  const [showRegistros, setShowRegistros] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -111,6 +114,20 @@ const denegarRegistro = () => {
     errorMessage('fecha', 'Registro cancelado. Necesitas permiso de tus padres.');
 };
 
+const verRegistros = () => {
+    setShowRegistros(true);
+};
+
+const cerrarRegistros = () => {
+    setShowRegistros(false);
+};
+
+const eliminarUsuario = (id) => {
+    if (window.confirm('¿Estás seguro de eliminar este usuario?')) {
+        setUsuarios(usuarios.filter(user => user.id !== id));
+    }
+};
+
 const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -136,15 +153,36 @@ const handleSubmit = (e) => {
     return;
     }
 
-    // All good
-    alert('¡Registro exitoso! Bienvenido a Level Up');
-    setForm({ username: '', apellido: '', email: '', fechaNacimiento: '', password: '', confirmPassword: '' });
+    // Create new user
+    const newUser = {
+        id: Date.now(),
+        nombre: form.username,
+        apellido: form.apellido,
+        email: form.email,
+        fechaNacimiento: form.fechaNacimiento,
+        edad: edad,
+        fechaRegistro: new Date().toLocaleString('es-CL')
+    };
+
+    setUsuarios(prev => [...prev, newUser]);
+
+    // Reset form
+    alert('¡Registro exitoso! Bienvenido a Level Up, ' + form.username + '!');
+    setForm({
+        username: '',
+        apellido: '',
+        email: '',
+        fechaNacimiento: '',
+        password: '',
+        confirmPassword: ''
+    });
     setMessages({});
     setRegistroPermitido(false);
 };
 
 return (
     <div className="registro-container">
+    <div className="registro-inner-container">
         <div className="registro-logo-container">
             <img src="https://via.placeholder.com/150/4cca36/ffffff?text=LEVEL+UP" alt="Logo" className="registro-logo-img" />
         </div>
@@ -266,11 +304,14 @@ return (
             </div>
 
             <button type="submit" className="registro-submit-btn">Registrarse</button>
+            <button type="button" className="registro-view-btn" onClick={verRegistros}>
+                <i className="fa-solid fa-list"></i> Ver Registros
+            </button>
         </form>
 
         {/* Age modal */}
         {ageModalOpen && (
-            <div className="registro-modal" id="ageModal" style={{ display: 'block' }}>
+            <div className="registro-modal" id="ageModal">
                 <div className="registro-modal-content">
                     <h3>Verificación de Edad</h3>
                     <p>Detectamos que eres menor de edad. ¿Tienes permiso de tus padres para registrarte?</p>
@@ -279,6 +320,58 @@ return (
                 </div>
             </div>
         )}
+
+        {/* Registros modal */}
+        {showRegistros && (
+            <div className="registro-modal">
+                <div className="registro-modal-content">
+                    <h3><i className="fa-solid fa-users"></i> Usuarios Registrados</h3>
+                    {usuarios.length === 0 ? (
+                        <div className="no-registros">
+                            <i className="fa-solid fa-inbox"></i><br/>
+                            No hay usuarios registrados aún
+                        </div>
+                    ) : (
+                        <table className="registros-table">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Email</th>
+                                    <th>Edad</th>
+                                    <th>Fecha de Registro</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {usuarios.map((usuario) => (
+                                    <tr key={usuario.id}>
+                                        <td>{usuario.nombre} {usuario.apellido}</td>
+                                        <td>{usuario.email}</td>
+                                        <td>
+                                            {usuario.edad} años{' '}
+                                            <span className={`badge badge-${usuario.edad >= 18 ? 'mayor' : 'menor'}`}>
+                                                {usuario.edad >= 18 ? 'Mayor de edad' : 'Menor de edad'}
+                                            </span>
+                                        </td>
+                                        <td>{usuario.fechaRegistro}</td>
+                                        <td>
+                                            <button 
+                                                className="delete-btn" 
+                                                onClick={() => eliminarUsuario(usuario.id)}
+                                            >
+                                                <i className="fa-solid fa-trash"></i> Eliminar
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    )}
+                    <button className="registro-btn-close" onClick={cerrarRegistros}>Cerrar</button>
+                </div>
+            </div>
+        )}
+    </div>
     </div>
 );
 }
