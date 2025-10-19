@@ -26,7 +26,7 @@ export default function footer() {
         <div className="social-media">
         <p>Síguenos:</p>
         <a
-            href="https://www.instagram.com/"
+            href="https://www.instagram.com/p/DQAOTOWiLZo/"
             target="_blank"
             rel="noopener noreferrer"
         >
@@ -37,12 +37,12 @@ export default function footer() {
             />
         </a>
         <a
-            href="https://www.youtube.com/"
+            href="https://www.youtube.com/watch?v=lRejW7XyNDg"
             target="_blank"
             rel="noopener noreferrer"
         >
             <img
-            src="https://via.placeholder.com/35x35/FF0000/ffffff?text=YT"
+            src="https://www.youtube.com/watch?v=lRejW7XyNDg"
             alt="YouTube Level-Up Gamer"
             className="social-icon"
             />
