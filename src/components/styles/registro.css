@@ -1,267 +1,289 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-}
-
 .registro-container {
-    min-height: 100vh;
-    background: linear-gradient(to bottom, #000000, #257212);
-    font-family: 'Roboto', sans-serif;
-    color: rgba(10, 10, 10, 0.836);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+  background-color: #2d794a;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Contenedor interior */
 .registro-inner-container {
-    position: relative;
-    width: 100%;
-    max-width: 450px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 40px 30px;
+  box-shadow: 
+    0 0 8px 2px #4cca36,       /* borde verde sólido y luminoso */
+    0 0 20px 6px rgba(76, 202, 54, 0.6); /* resplandor difuso */
+  width: 100%;
+  max-width: 480px;
+  box-sizing: border-box;
+  text-align: center;
 }
 
+/* Logo */
 .registro-logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: -60px;
-    z-index: 10;
-    position: relative;
+  margin-bottom: 20px;
 }
 
 .registro-logo-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 0 20px rgba(76, 202, 54, 0.7);
+  width: 150px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
 }
 
+/* Formulario en columna */
 .registro-form {
-    background-color: rgb(255, 253, 253);
-    padding: 80px 40px 40px 40px;
-    border-radius: 15px;
-    width: 100%;
-    box-shadow: 
-        0 0 8px #4cca36,
-        0 0 15px #4cca36,
-        0 0 30px #4cca36,
-        0 0 40px #4cca36;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: left;
 }
 
+/* Título */
 .registro-form-title {
-    margin: 0 0 30px 0;
-    text-align: center;
-    font-family: "Permanent Marker", cursive;
-    font-size: 28px;
-    color: #000000;
-    letter-spacing: 1px;
-    font-weight: bold;
+  font-size: 24px;
+  color: #377528;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-align: center;
 }
 
+/* Contenedor input y icono */
 .registro-input-container {
-    position: relative;
-    margin-top: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.registro-input {
-    width: 100%;
-    padding: 12px 10px 12px 40px;
-    font-size: 16px;
-    background-color: #377528ef;
-    border: none;
-    border-radius: 6px;
-    color: white;
-    outline: none;
-    box-sizing: border-box;
-    transition: background-color 0.3s ease;
-}
-
-.registro-input::placeholder {
-    color: #d7e1cd;
-}
-
-.registro-input:focus {
-    background-color: #2a591f;
-}
-
+/* Iconos fontawesome dentro del input */
 .registro-input-container i {
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #ffffffef;
-    font-size: 18px;
-    pointer-events: none;
+  color: #377528;
+  font-size: 18px;
+  min-width: 25px;
+  text-align: center;
 }
 
+/* Inputs */
+.registro-input {
+  flex-grow: 1;
+  padding: 12px 15px;
+  border: 1.8px solid #a9cbb7;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #fffefe;
+  outline-offset: 2px;
+  transition: border-color 0.3s ease;
+}
+
+/* Cambiar borde cuando está enfocado */
+.registro-input:focus {
+  border-color: #4cca36;
+  box-shadow: 0 0 6px #a4d96dcc;
+}
+
+/* Input tipo date - mejorando calendario */
+input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #f7fcf6;
+  color: #377528;
+  padding-right: 40px; /* para que el ícono no tape texto */
+  cursor: pointer;
+}
+
+/* Cambiar color del calendario */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(36%) sepia(89%) saturate(426%) hue-rotate(69deg) brightness(90%) contrast(86%);
+  cursor: pointer;
+}
+
+/* Mensajes de error y éxito */
 .registro-error-message {
-    color: #ff4444;
-    font-size: 12px;
-    margin-top: 5px;
+  color: #d43d3d;
+  font-size: 13px;
+  margin-top: 3px;
 }
 
 .registro-success-message {
-    color: #4cca36;
-    font-size: 12px;
-    margin-top: 5px;
+  color: #3aa55c;
+  font-size: 13px;
+  margin-top: 3px;
 }
 
-.registro-submit-btn {
-    margin-top: 25px;
-    padding: 12px;
-    font-size: 18px;
-    background-color: #2a591f;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    width: 70%;
-    transition: background-color 0.3s ease;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.registro-submit-btn:hover {
-    background-color: #85b376;
+/* Botones */
+.registro-submit-btn,
+.registro-view-btn {
+  background-color: #4cca36;
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 14px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
 }
 
 .registro-view-btn {
-    margin-top: 15px;
-    padding: 10px;
-    font-size: 16px;
-    background-color: #4cca36;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    width: 70%;
-    transition: background-color 0.3s ease;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  background-color: #377528;
+}
+
+.registro-submit-btn:hover {
+  background-color: #3aa55c;
 }
 
 .registro-view-btn:hover {
-    background-color: #5ee047;
+  background-color: #2e5d20;
 }
 
+/* Modal */
 .registro-modal {
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(55, 117, 40, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
 }
 
 .registro-modal-content {
-    background-color: #fefefe;
-    margin: 5% auto;
-    padding: 30px;
-    border: none;
-    border-radius: 15px;
-    width: 90%;
-    max-width: 800px;
-    text-align: center;
-    box-shadow: 0 0 20px rgba(76, 202, 54, 0.5);
-    max-height: 80vh;
-    overflow-y: auto;
+  background: white;
+  padding: 25px 30px;
+  border-radius: 12px;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-.registro-modal h3 {
-    color: #257212;
-    margin-bottom: 15px;
-    font-size: 24px;
+.registro-modal-content h3 {
+  color: #377528;
+  margin-bottom: 15px;
 }
 
-.registro-modal p {
-    margin-bottom: 20px;
-    color: #333;
-    line-height: 1.6;
+.registro-modal-content p {
+  font-size: 16px;
+  margin-bottom: 20px;
 }
 
-.registro-modal button {
-    margin: 10px;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: transform 0.2s ease;
-}
-
-.registro-modal button:hover {
-    transform: scale(1.05);
+.registro-btn-yes,
+.registro-btn-no,
+.registro-btn-close {
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 12px 22px;
+  margin: 6px;
+  border: none;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
 }
 
 .registro-btn-yes {
-    background-color: #4cca36;
-    color: white;
+  background-color: #4cca36;
+  color: white;
+}
+
+.registro-btn-yes:hover {
+  background-color: #3aa55c;
 }
 
 .registro-btn-no {
-    background-color: #ff4444;
-    color: white;
+  background-color: #d43d3d;
+  color: white;
+}
+
+.registro-btn-no:hover {
+  background-color: #a53030;
 }
 
 .registro-btn-close {
-    background-color: #666;
-    color: white;
+  background-color: #377528;
+  color: white;
+  width: 100%;
+  margin-top: 20px;
 }
 
-/* Registros table styles */
+.registro-btn-close:hover {
+  background-color: #2e5d20;
+}
+
+/* Tabla registros */
 .registros-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.registros-table th,
+.registros-table td {
+  padding: 10px 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+  color: #333;
 }
 
 .registros-table th {
-    background-color: #2a591f;
-    color: white;
-    padding: 12px;
-    text-align: left;
-    font-weight: bold;
-}
-
-.registros-table td {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-    color: #333;
-}
-
-.registros-table tr:hover {
-    background-color: #f5f5f5;
-}
-
-.no-registros {
-    text-align: center;
-    padding: 30px;
-    color: #666;
-    font-style: italic;
+  background-color: #4cca36;
+  color: white;
+  font-weight: 600;
 }
 
 .badge {
-    display: inline-block;
-    padding: 3px 8px;
-    border-radius: 12px;
-    font-size: 11px;
-    font-weight: bold;
+  border-radius: 12px;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
 }
 
 .badge-mayor {
-    background-color: #4cca36;
-    color: white;
+  background-color: #3aa55c;
 }
 
 .badge-menor {
-    background-color: #ff9800;
-    color: white;
+  background-color: #d43d3d;
+}
+
+.delete-btn {
+  background-color: #d43d3d;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: #a53030;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .registro-inner-container {
+    padding: 25px 20px;
+  }
+  .registro-logo-img {
+    width: 120px;
+  }
+  .registro-submit-btn,
+  .registro-view-btn {
+    font-size: 14px;
+    padding: 12px 0;
+  }
+  .registro-form {
+    gap: 12px;
+  }
 }
