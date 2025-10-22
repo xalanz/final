@@ -1,19 +1,32 @@
 import React from "react";
 import { useCart } from "../../../context/CartContext.jsx";
 
+import gabineteWhite from "../../img/Gabinete-Prisma-Pro-White-RGB-EATX-Vidrio-Templado-USB-3.0-1-0v-300x300.png";
+import gabineteBlack from "../../img/D_NQ_NP_722439-MLC48429949421_122021-O-gabinete-pc-gamer-gabinete-atx-micr-torre-pc-gabinetes-gamer.webp";
+import gabinetePink from "../../img/gabinete-gamer-lacheris-pink-con-fuente-de-poder-600w.jpg";
+import gabineteATX from "../../img/Gabinetes-de-computadora-ATX-OEM-Cool-y-Handsome-para-gamers-con-vidrio-templado-ventiladores-de-colores-y-refrigeraci-n-por-agua.avif";
+import mouseErgonomic from "../../img/ma1.jpg";
+import mouseRedragon from "../../img/m1.jpg";
+import mouseWhite from "../../img/mouse-gamer-logitech-910-006170-g502-x-plus-white-mouse-gamer-logitech-910-006170-g502-x-plus-white.jpg";
+import mouseErg2 from "../../img/D_NQ_NP_839136-MLA84192292302_052025-O.webp";
+import tecladoBlanco from "../../img/images.jpg";
+import tecladoNegro from "../../img/teclado egro.avif";
+import audifonosGato from "../../img/verdeverde.png";
+import audifonos from "../../img/negroverde12.png";
+
 const products = [
-    { id: 1, name: "Polera", price: "$150.000", img: "../img/polera 1" },
-    { id: 2, name: "Polera", price: "$10.000", img: "../img/polera3.webp" },
-    { id: 3, name: "Polera", price: "$7.000", img: "../img/polera4.webp" },
-    { id: 4, name: "Polera", price: "$12.990", img: "../img/polera5.webp" },
-    { id: 5, name: "Polerón de Naruto", price: "$120.000", img: "../img/poleron1.jpg" },
-    { id: 6, name: "Polerón Totoro", price: "$20.000", img: "../img/poleron2.jpg" },
-    { id: 7, name: "Polerón Totoro", price: "$25.000", img: "../img/poleron3.jpg" },
-    { id: 8, name: "Polerón One Piece", price: "$35.000", img: "../img/poleron4.jpg" },
-    { id: 9, name: "Jujutsu Kaisen", price: "$35.990", img: "../img/1.webp" },
-    { id: 10, name: "Jujutsu Kaisen", price: "$20.000", img: "../img/2.webp" },
-    { id: 11, name: "Jujutsu Kaisen", price: "$30.000", img: "../img/3.jpeg" },
-    { id: 12, name: "Chaqueta T1", price: "$150.000", img: "../img/faker2.jpg" },
+    { id: 1, name: "Gabinete WHITE", price: "$60.000", img: gabineteWhite },
+    { id: 2, name: "Gabinete gamer BLACK", price: "$40.000", img: gabineteBlack },
+    { id: 3, name: "Gabinete gamer LACHERIS PINK", price: "$80.000", img: gabinetePink },
+    { id: 4, name: "Gabinete ATX", price: "$100.000", img: gabineteATX },
+    { id: 5, name: "Mouse ergonomic", price: "$30.000", img: mouseErgonomic },
+    { id: 6, name: "Mouse REDRAGON", price: "$30.000", img: mouseRedragon },
+    { id: 7, name: "Mouse WHITE", price: "$25.000", img: mouseWhite },
+    { id: 8, name: "Mouse ergonoic", price: "$35.000", img: mouseErg2 },
+    { id: 9, name: "Teclado blanco", price: "$35.990", img: tecladoBlanco },
+    { id: 10, name: "Teclado negro", price: "$20.000", img: tecladoNegro },
+    { id: 11, name: "Audifonos GATO", price: "$30.000", img: audifonosGato },
+    { id: 12, name: "Audifonos", price: "$15.000", img: audifonos },
 ];
 
 export default function ProductList() {
