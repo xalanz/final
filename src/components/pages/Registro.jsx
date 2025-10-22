@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../../components/styles/registro.css';
+import logo from '../img/Level-Up.png';
 
 export default function Registro() {
   const [form, setForm] = useState({
@@ -184,7 +185,7 @@ return (
     <div className="registro-container">
     <div className="registro-inner-container">
         <div className="registro-logo-container">
-            <img src="https://via.placeholder.com/150/4cca36/ffffff?text=LEVEL+UP" alt="Logo" className="registro-logo-img" />
+            <img src={logo} alt="Logo Level-Up Gaming" className="registro-logo-img" />
         </div>
 
         <form id="registroForm" onSubmit={handleSubmit} className="registro-form">

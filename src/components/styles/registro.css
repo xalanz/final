@@ -24,11 +24,12 @@
 
 /* Logo */
 .registro-logo-container {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  margin-top: -80px;
 }
 
 .registro-logo-img {
-  width: 150px;
+  width: 200px;
   height: auto;
   margin: 0 auto;
   display: block;

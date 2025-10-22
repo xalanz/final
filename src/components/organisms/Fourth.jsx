@@ -26,12 +26,12 @@ export default function footer() {
         <div className="social-media">
         <p>Síguenos:</p>
         <a
-            href="https://www.instagram.com/p/DQAOTOWiLZo/"
+            href="https://www.instagram.com/p/DOrnNADkrjF/"
             target="_blank"
             rel="noopener noreferrer"
         >
             <img
-            src="https://via.placeholder.com/35x35/E4405F/ffffff?text=IG"
+            src="https://www.instagram.com/p/DOrnNADkrjF/"
             alt="Instagram Level-Up Gamer"
             className="social-icon"
             />

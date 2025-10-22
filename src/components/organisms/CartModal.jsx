@@ -6,7 +6,19 @@ export default function CartModal({ isOpen, onClose }) {
 
   if (!isOpen) return null;
 
-  const total = cart.reduce((sum, item) => sum + parseFloat(item.price.replace('$', '').replace(',', '')) * item.quantity, 0);
+  const total = cart.reduce((sum, item) => {
+    // Convertir el precio de formato "$XX.XXX" a número
+    const precioStr = item.price.replace('$', '').replace(/\./g, '');
+  const precio = parseInt(precioStr.replace(',', '').trim());
+  return sum + precio * item.quantity;
+}, 0)
+
+const totalFormateado = new Intl.NumberFormat('es-CL', {
+  style: 'currency',
+  currency: 'CLP'
+}).format(total);
+
+
 
   return (
     <div className="cart-modal" style={{ display: isOpen ? 'block' : 'none' }}>
@@ -54,7 +66,7 @@ export default function CartModal({ isOpen, onClose }) {
             ))}
 
             <div className="cart-total">
-              <p>Total: ${total.toFixed(2)}</p>
+              <p>Total: ${formatearPrecioChileno(total)}</p>
               <button className="checkout-btn">
                 Proceder al pago
               </button>

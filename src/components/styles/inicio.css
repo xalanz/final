@@ -19,7 +19,7 @@
 
 .login-form {
     background-color: rgb(255, 253, 253);
-    padding: 80px 40px;  
+    padding: 120px 40px 40px;  
     border-radius: 15px;
     width: 450px;
     display: flex;
@@ -41,17 +41,14 @@
 .login-logo-container {
     position: relative;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .login-logo-img {
-    width: 150px;  
-    height: 150px; 
-    border-radius: 50%;
-    object-fit: cover;
-    position: absolute; 
-    top: -40px;  
-    left: 50%; 
-    transform: translateX(-50%);
+    width: 200px;
+    height: auto;
+    margin-top: -100px;
+    margin-bottom: 20px;
 }
 
 .login-input {

@@ -1,19 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/inicio.css';
+import logo from '../img/Level-Up.png';
 
 export default function Login() {
     return (
         <div className="login-container">
-            <div className="login-logo-container">
-                <img
-                    src="https://via.placeholder.com/150/4cca36/ffffff?text=LEVEL+UP"
-                    alt="Logo"
-                    className="login-logo-img"
-                />
-            </div>
-
             <form className="login-form">
+                <div className="login-logo-container">
+                    <img
+                        src={logo}
+                        alt="Logo Level-Up Gaming"
+                        className="login-logo-img"
+                    />
+                </div>
+                
                 <div className="login-input-container">
                     <i className="fa-solid fa-envelope" />
                     <input
