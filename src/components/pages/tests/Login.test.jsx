@@ -7,7 +7,7 @@ import '../styles/inicio.css';
 // Mock de useNavigate
 const mockNavigate = jest.fn();
 
-// Mock de los estilos y la imagen
+// Mock de los estilos y la imagen siever para la que imagens estas validadas 
 jest.mock('../styles/inicio.css', () => ({}));
 jest.mock('../img/Level-Up.png', () => 'Level-Up.png');
 
