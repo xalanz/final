@@ -72,7 +72,7 @@ export default function ProductListAcee() {
             <a href="#tracking">📦 Estado de mi paquete</a>
         </li>
         <li>
-        <a href="#centro-ayuda">🏪 Centro de ayuda - Melipilla</a>
+        <a href="https://www.google.com/maps?q=Padre+Mariano+356,+7500026+Providencia,+Región+Metropolitana" target="_blank" rel="noopener noreferrer">🏪 Centro de ayuda - Providencia</a>
         </li>
         </ul>
 
