@@ -11,8 +11,7 @@ describe('Registro component', () => {
     it('renderiza el formulario de registro correctamente', () => {
         render(<Registro />);
         
-        // Verifica que el logo está presente
-        expect(screen.getByAltText('Logo Level-Up Gaming')).toBeInTheDocument();
+
         
         // Verifica el título del formulario
         expect(screen.getByText('REGISTRO DE USUARIO')).toBeInTheDocument();

@@ -24,13 +24,16 @@
 
         .hola{
 
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            display: flex;
-            align-items: center;
-            min-height: 80vh;
-            padding: 80px 0;
+           background-image: 
+        linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(0,0,0,1) 100%),
+        url(../img/M314_1080x.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    min-height: 80vh;
+    padding: 80px 0;
         }
 
         .menu {
@@ -150,40 +153,77 @@
             border-radius: 10px;
         }
 
+        /* Product area: place heading at left and grid at right */
+        .product.container {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            padding: 20px 0;
+        }
+
+        .product.container h2 {
+            color: #fff;
+            font-size: 26px;
+            width: 220px; /* left column width for heading */
+            margin: 40px 0 0 20px;
+            text-transform: lowercase;
+            font-weight: 700;
+        }
+
         .product-content {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            padding: 20px;
+            gap: 30px 30px;
+            flex: 1 1 auto;
+            align-items: start;
+            padding: 0 20px 20px 0;
         }
 
         .product-1 {
             background-color: rgb(41, 11, 3);
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
-            transition: all 0.3s ease;
+            border-radius: 12px;
+            padding: 18px;
+            box-shadow: 0 0 18px rgba(0, 255, 0, 0.9);
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+            position: relative; /* required for badge positioning */
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
         }
 
+        /* Make the image appear inside a white card area like the screenshot */
         .product-1 img {
             width: 100%;
-            max-width: 230px;
-            height: 200px;
+            max-width: 260px;
+            height: 180px;
             object-fit: cover;
             display: block;
-            margin: 0 auto;
-            border-radius: 10px;
-            transition: all 0.3s ease;
+            margin: 0 auto 12px auto;
+            border-radius: 8px;
+            background: #fff;
+            padding: 8px;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+            transition: transform 0.18s ease;
         }
 
+        .product-1:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0,255,0,0.95);
+        }
+
+        /* product-badge removed: no badge styles remain */
+
         .product-txt {
-            padding: 20px;
+            padding: 8px 6px 0 6px;
+            flex: 1 1 auto;
         }
 
         h3 {
-            font-size: 20px;
-            color: #FFFF;
-            margin-bottom: 20px;
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 12px;
+            line-height: 1.2;
+            font-weight: 700;
         }
 
         .price {
@@ -193,25 +233,29 @@
         }
 
         .price p {
-            font-size: 15px;
+            font-size: 14px;
             color: rgb(35, 81, 235);
+            margin: 0;
+            padding-right: 8px;
+            font-weight: 700;
         }
 
         .btn-2 {
-            padding: 5px 25px;
+            padding: 6px 18px;
             background-color: rgb(36, 163, 25);
-            margin-right: 0;
+            margin-left: auto;
             cursor: pointer;
             border: none;
-            border-radius: 25px;
+            border-radius: 20px;
             color: white;
-            font-weight: bold;
-            transition: all 0.3s ease;
+            font-weight: 700;
+            transition: transform 0.12s ease, background-color 0.12s ease;
+            font-size: 13px;
         }
 
         .btn-2:hover {
             background-color: rgb(46, 192, 53);
-            transform: scale(1.05);
+            transform: translateY(-2px);
         }
 
         .contact {

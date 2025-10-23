@@ -41,8 +41,14 @@ describe('ProductList component', () => {
             price: "$40.000", 
             img: "gabinete.avif" },
         { id: 3, 
-            name: "Mouse ergonomic", price: "$30.000", img: "gabinete.avif" },
-        { id: 4, name: "Mouse REDRAGON", price: "$30.000", img: "gabinete.avif" }
+            name: "Mouse ergonomic",
+            price: "$30.000", 
+            img: "gabinete.avif" },
+        { id: 4, 
+            name: 
+            "Mouse REDRAGON", 
+            price: "$30.000", 
+            img: "gabinete.avif" }
     ];
 
     it('renderiza correctamente la lista de productos', () => {
