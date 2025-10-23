@@ -30,14 +30,14 @@ describe('Login component', () => {
         // Verifica que el logo está presente
         expect(screen.getByAltText('Logo Level-Up Gaming')).toBeInTheDocument();
         
-        // Verifica que los campos del formulario están presentes
+        // Esto asegura que el campo correo y el campo contraseña realmente aparecen en el formulario
         expect(screen.getByPlaceholderText('Correo')).toBeInTheDocument();
         expect(screen.getByPlaceholderText('Contraseña')).toBeInTheDocument();
         
-        // Verifica que el botón de iniciar está presente
+        // Verifica que el botón para iniciar sesión está presente
         expect(screen.getByText('Iniciar')).toBeInTheDocument();
         
-        // Verifica el texto de registro
+        // Esto asegura que la parte del registro también está en la pantalla
         expect(screen.getByText('¿No te has registrado?')).toBeInTheDocument();
         expect(screen.getByText('Regístrate aquí')).toBeInTheDocument();
     });

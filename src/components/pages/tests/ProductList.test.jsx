@@ -33,9 +33,15 @@ beforeEach(() => {
 
 describe('ProductList component', () => {
     const mockProducts = [
-        { id: 1, name: "Gabinete WHITE", price: "$60.000", img: "gabinete.avif" },
-        { id: 2, name: "Gabinete gamer BLACK", price: "$40.000", img: "gabinete.avif" },
-        { id: 3, name: "Mouse ergonomic", price: "$30.000", img: "gabinete.avif" },
+        { id: 1, name: "Gabinete WHITE",
+            price: "$60.000", 
+            img: "gabinete.avif" },
+        { id: 2, name: 
+            "Gabinete gamer BLACK", 
+            price: "$40.000", 
+            img: "gabinete.avif" },
+        { id: 3, 
+            name: "Mouse ergonomic", price: "$30.000", img: "gabinete.avif" },
         { id: 4, name: "Mouse REDRAGON", price: "$30.000", img: "gabinete.avif" }
     ];
 
